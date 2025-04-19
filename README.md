@@ -1,47 +1,37 @@
-# Breast-Cancer-Analysis-Python
-# 🔍 Breast Cancer Logistic Regression Analysis
+# 🔬 Breast Cancer Logistic Regression Analysis
 
-This project investigates the effectiveness of logistic regression in predicting breast cancer malignancy using imaging features extracted from digitized fine-needle aspirate (FNA) data. The data is sourced from the [UCI Breast Cancer Wisconsin Dataset](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data).
+This project explores the effectiveness of logistic regression models in predicting the malignancy of breast cancer tumors using digitized FNA image features. The analysis is conducted in both **R** and **Python** for comparative insights.
 
-Both **R** and **Python** implementations are provided for educational and comparative purposes.
+## 📈 Objective
+To build, evaluate, and compare multiple logistic regression models for breast cancer classification using texture, concavity, and radius characteristics. The data originates from the UCI Machine Learning Repository.
 
----
+## 📊 Dataset
+- **Source**: [UCI Breast Cancer Wisconsin (Diagnostic) Data Set](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
+- **Samples**: 569 observations
+- **Features**: 30 numeric predictors (we focus on 10 mean image features)
 
-## 📊 Final Model Summary
+## 🧪 Methods
+- Data split: 60% Training, 20% Validation, 20% Test
+- Feature selection based on statistical significance and correlation
+- Model comparison using AIC, Accuracy, AUC, and LogLoss
+- Final model: `logit(p) = -0.47 + 0.82*texture_mean + 1.29*concavity_mean + 2.29*radius_mean`
 
-**Selected Predictors:**
-- `texture_mean`
-- `concavity_mean`
-- `radius_mean`
+## ✅ Final Model (Python Test Results)
+- **Accuracy**: 0.91  
+- **AUC**: 0.9835  
+- **Confusion Matrix**:
+  - Sensitivity: 0.93  
+  - Specificity: 0.88  
 
-**Final Model Equation (Python output):**
-logit(p) = -0.47 + 0.82texture_mean + 1.29concavity_mean + 2.29*radius_mean
+## 📘 Reports
 
----
+- 📊 **[View R Markdown Report on RPubs](https://rpubs.com/lukahere007/breast-cancer-logistic-regression)**
+- 🐍 **[View Python Notebook on GitHub](https://github.com/lukahere007/Breast-Cancer-Analysis-Python/blob/main/Breast%20Cancer%20Analysis%20in%20Python.ipynb)**
 
-## ✅ Test Set Evaluation
-
-| Metric               | Value |
-|----------------------|-------|
-| **Accuracy**         | 0.91  |
-| **AUC (ROC)**        | 0.9835 |
-| **Precision (Benign)**   | 0.93  |
-| **Recall (Benign)**      | 0.93  |
-| **Precision (Malignant)** | 0.88  |
-| **Recall (Malignant)**   | 0.88  |
-
----
-
-## 📈 Visual Summary
-
-- ROC Curve confirms excellent classification performance.
-- Logistic curve illustrates the impact of `texture_mean` on malignancy probability, annotated with the final equation.
-
----
 
 ## 📎 Additional Resources
 
-- 📘 Full R Markdown Report: [RPubs Report](https://rpubs.com/lukahere007/breast-cancer-logistic-regression)
+
 - 👤 LinkedIn: [Luke Wamalwa](https://www.linkedin.com/in/luke-wamalwa-839624292)
 
 ---
