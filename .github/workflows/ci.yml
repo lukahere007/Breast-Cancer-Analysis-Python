@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  notebook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Notebook runs top to bottom
+        run: jupyter nbconvert --to notebook --execute breast_cancer_logistic_regression.ipynb --output /tmp/executed.ipynb --ExecutePreprocessor.timeout=600
